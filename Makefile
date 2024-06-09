@@ -15,3 +15,15 @@ CC := cc
 CFLAGS := -Wall -Werror -Wextra
 SRCS := ft_printf.c
 OBJS := 
+
+%.o: %.c
+	${CC} -c ${CFLAGS} $< -o $@
+
+all: ${NAME}
+
+clean:
+	rm %.o
+
+fclean:
+	clean
+	rm ${NAME}
