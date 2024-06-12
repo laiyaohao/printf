@@ -24,3 +24,6 @@ typedef struct s_specs
 	int	precision;
 	
 }					t_specs;
+
+int	ft_printf(const char *str, ...);
+void	ft_initialise(t_specs *specs);

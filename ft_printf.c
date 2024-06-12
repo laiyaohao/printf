@@ -41,10 +41,25 @@ use a struct to create the parameters?
 
 int	ft_printf(const char *str, ...)
 {
-	va_list	ap;
+	va_list	args;
+	t_specs	specs;
+	size_t	i;
 	
+	va_start(args, str);
 	while (*str)
 	{
-		
+		while (*str != '%')
+		{
+			write(1, *str, 1); // can use putchar
+			str++;
+		}
+		// initialise the struct here
+		ft_initialise(&specs);
+		// check flags ie '-', '+', ' ', '0', "'", '#'
+		ft_check_flags(i, str, &specs);
+		// check width
+		ft_check_width(i, str, &specs);
+		ft_check_prec(i, str, &specs);
+		ft_check_len(i, str, &specs);
 	}
 }
