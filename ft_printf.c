@@ -42,24 +42,32 @@ use a struct to create the parameters?
 int	ft_printf(const char *str, ...)
 {
 	va_list	args;
-	t_specs	specs;
+	t_specs	*specs;
 	size_t	i;
 	
 	va_start(args, str);
-	while (*str)
+	specs = (t_specs *)malloc(sizeof(t_specs)); // can use calloc??
+	if (!specs)
+		return NULL;
+	i = 0;
+	while (str[i])
 	{
-		while (*str != '%')
+		// normal case
+		while (str[i] != '%')
 		{
-			write(1, *str, 1); // can use putchar
-			str++;
+			write(1, str[i], 1); // can use putchar
+			i++;
 		}
-		// initialise the struct here
-		ft_initialise(&specs);
+		// when str[i] reached %, initialise the struct here
+		ft_initialise(specs);
+		// move the index pass the '%'.
+		i++;
 		// check flags ie '-', '+', ' ', '0', "'", '#'
-		ft_check_flags(i, str, &specs);
-		// check width
-		ft_check_width(i, str, &specs);
-		ft_check_prec(i, str, &specs);
-		ft_check_len(i, str, &specs);
+		ft_put_flags(&i, str, specs);
+		// check width. will start with a number or a *
+		ft_put_width(&i, str, specs);
+		// check precision. will start with a period (.)
+		ft_put_prec(&i, str, specs);
+		ft_put_len(&i, str, specs);
 	}
 }

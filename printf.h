@@ -11,8 +11,9 @@
 /* ************************************************************************** */
 
 #include <stdarg.h>
+#include <stdlib.h>
 
-typedef struct s_specs
+typedef struct	s_specs
 {
 	int	minus;
 	int	plus;
@@ -27,3 +28,8 @@ typedef struct s_specs
 
 int	ft_printf(const char *str, ...);
 void	ft_initialise(t_specs *specs);
+void	ft_put_flags(size_t *i, const char *str, t_specs *specs);
+void	ft_put_width(size_t *i, const char *str, t_specs *specs);
+void	ft_put_minus(size_t *i, const char *str, t_specs *specs);
+void	ft_put_plus(size_t *i, const char *str, t_specs *specs);
+int	ft_check_width(size_t *i, const char *str);
