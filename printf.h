@@ -6,7 +6,7 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 14:58:43 by ylai              #+#    #+#             */
-/*   Updated: 2024/06/09 15:53:11 by ylai             ###   ########.fr       */
+/*   Updated: 2024/06/17 13:30:05 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ typedef struct	s_specs
 	int	hash;
 	int	width;
 	int	precision;
-	
+	va_list	args;
 }					t_specs;
 
 int	ft_printf(const char *str, ...);
