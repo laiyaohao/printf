@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_space.c                                     :+:      :+:    :+:   */
+/*   ft_check_width.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/17 12:46:37 by ylai              #+#    #+#             */
-/*   Updated: 2024/07/04 20:35:53 by ylai             ###   ########.fr       */
+/*   Created: 2024/06/17 12:46:20 by ylai              #+#    #+#             */
+/*   Updated: 2024/07/04 21:26:37 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../ft_printf.h"
+#include "printf.h"
 
-void	ft_put_space(size_t *i, const char *str, t_specs *specs)
+int	ft_check_width(size_t *i, const char *str)
 {
-	while (str[*i] == ' ')
-	{
-		specs->space = 1;
-		*i++;
-	}
+	if (ft_ispositive(str[*i]) || str[*i] == '*')
+		return 1;
+	return 0;
 }

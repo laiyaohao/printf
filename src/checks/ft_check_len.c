@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_type.c                                    :+:      :+:    :+:   */
+/*   ft_check_len.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/17 14:31:18 by ylai              #+#    #+#             */
-/*   Updated: 2024/06/17 14:33:08 by ylai             ###   ########.fr       */
+/*   Created: 2024/06/17 14:12:36 by ylai              #+#    #+#             */
+/*   Updated: 2024/07/04 21:06:54 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int	ft_check_type(size_t *i, const char *str)
+int	ft_check_len(size_t *i, const char *str)
 {
-	if (str[*i] == '%'
-	|| str[*i] == )
+	if (str[*i] == 'h' || str[*i] == 'l' || str[*i] == 'L' || str[*i] == 'z'
+	|| str[*i] == 'j' || str[*i] == 't')
+		return (1);
+	return (0);
 }

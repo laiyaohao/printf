@@ -6,11 +6,11 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 12:46:23 by ylai              #+#    #+#             */
-/*   Updated: 2024/06/17 12:46:24 by ylai             ###   ########.fr       */
+/*   Updated: 2024/07/04 22:12:54 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 void	ft_initialise(t_specs *specs)
 {
@@ -22,4 +22,5 @@ void	ft_initialise(t_specs *specs)
 	specs->space = 0;
 	specs->width = 0;
 	specs->zero = 0;
+	specs->len = 0;
 }

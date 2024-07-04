@@ -6,11 +6,11 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 13:00:39 by ylai              #+#    #+#             */
-/*   Updated: 2024/06/17 15:00:42 by ylai             ###   ########.fr       */
+/*   Updated: 2024/07/04 21:44:32 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../printf.h"
+#include "ft_printf.h"
 
 void	ft_put_flags(size_t *i, const char *str, t_specs *specs)
 {

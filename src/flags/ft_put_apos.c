@@ -6,11 +6,11 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 12:46:12 by ylai              #+#    #+#             */
-/*   Updated: 2024/06/17 15:00:28 by ylai             ###   ########.fr       */
+/*   Updated: 2024/07/04 20:33:32 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../printf.h"
+#include "../../ft_printf.h"
 
 void ft_put_apos(size_t *i, const char *str, t_specs *specs)
 {
