@@ -15,6 +15,7 @@
 #endif
 #include <stdarg.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 typedef struct	s_specs
 {
@@ -45,3 +46,4 @@ int	ft_check_width(size_t *i, const char *str);
 int	ft_check_len(size_t *i, const char *str);
 int	ft_check_prec(size_t *i, const char *str);
 int	ft_check_type(size_t *i, const char *str);
+int	ft_ispositive(char c);

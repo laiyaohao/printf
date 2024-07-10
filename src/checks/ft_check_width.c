@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "../../ft_printf.h"
 
 int	ft_check_width(size_t *i, const char *str)
 {
 	if (ft_ispositive(str[*i]) || str[*i] == '*')
-		return 1;
-	return 0;
+		return (1);
+	return (0);
 }

@@ -13,7 +13,18 @@
 NAME := libftprintf.a
 CC := cc
 CFLAGS := -Wall -Werror -Wextra
-SRCS := ft_printf.c 
+SRC_DIR := src
+CHECK_DIR := ${SRC_DIR}/checks/
+FLAG_DIR := ${SRC_DIR}/flags/
+UTIL_DIR := ${UTIL_DIR}/utils/
+
+CHECK_FILES := ft_check_len ft_check_prec ft_check_type ft_check_width
+FLAG_FILES := ft_put_apos ft_put_hash ft_put_minus ft_put_plus ft_put_space \
+ft_put_zero
+UTIL_FILES := ft_ispositive
+SRCS := $(addprefix $(CHECK_DIR), $(addsuffix .c, $(CHECK_FILES))) \
+$(addprefix $(FLAG_DIR), $(addsuffix .c, $(FLAG_FILES))) \
+$(addprefix $(UTIL_DIR), $(addsuffix .c, $(UTIL_FILES)))
 OBJS := ${SRCS:.c=.o}
 
 %.o: %.c
@@ -25,7 +36,7 @@ ${NAME}: ${OBJS}
 all: ${NAME}
 
 clean:
-	rm -f %.o
+	rm -f ${OBJS}
 
 fclean: clean
 	rm -f ${NAME}
