@@ -12,32 +12,29 @@
 
 #include "ft_printf.h"
 
-int	ft_printf(const char *str, ...)
+int	ft_printf(const char *str)
 {
-	t_specs	*specs;
 	size_t	i;
 	int	ans;
+	va_list	args;
 	
-	va_start(specs->args, str);
+	va_start(args, str);
 	i = 0;
 	ans = 0;
 	while (str[i])
 	{
-		// normal case
-		while (str[i] != '%')
-		{
-			ans += write(1, &str[i], 1); // can use putchar
-			i++;
-		}
-		specs = (t_specs *)malloc(sizeof(t_specs)); // can use calloc??
-		if (!specs)
-			return NULL;
-		ft_initialise(specs);
-		// move the index pass the '%'.
+		ft_normal(str, &ans, &i);
 		i++;
-		ft_eval_format(&i, str, specs);
-		
-		
+		write(1, "\n\n",2);
+		write(1, &str[i],1);
+		ft_format(str, &ans, &i, args);
+		break;
 	}
 	return (ans);
+}
+
+int main(void)
+{
+	printf("%%\n");
+	return 0;
 }
