@@ -1,3 +1,5 @@
+#include "ft_printf.h"
+
 /**
  * @brief Returns the number of digits in an integer
  * @param n The integer

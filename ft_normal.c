@@ -1,4 +1,6 @@
-void  ft_normal(char *str, int *ans, int *i)
+#include "ft_printf.h"
+
+void  ft_normal(const char *str, int *ans, size_t *i)
 {
   while (str[*i] != '%')
   {

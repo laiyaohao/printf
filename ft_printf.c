@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int	ft_printf(const char *str)
+int	ft_printf(const char *str, ...)
 {
 	size_t	i;
 	int	ans;
@@ -28,13 +28,13 @@ int	ft_printf(const char *str)
 		write(1, "\n\n",2);
 		write(1, &str[i],1);
 		ft_format(str, &ans, &i, args);
-		break;
+		
 	}
 	return (ans);
 }
 
 int main(void)
 {
-	printf("%%\n");
+	printf("%i\n", 90);
 	return 0;
 }

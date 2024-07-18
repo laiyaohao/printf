@@ -18,4 +18,9 @@
 #include <unistd.h>
 #include <stdio.h>
 
-int	ft_printf(const char *str);
+int	ft_printf(const char *str, ...);
+char  *ft_itoa(int n);
+int ft_isnegative(int n);
+int ft_abs(int i);
+void  ft_normal(const char *str, int *ans, size_t *i);
+void	ft_format(const char *str, int *ans, size_t *i, va_list args);
