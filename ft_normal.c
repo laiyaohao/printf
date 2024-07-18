@@ -1,10 +1,11 @@
 #include "ft_printf.h"
 
-void  ft_normal(const char *str, int *ans, size_t *i)
+void  ft_normal(const char *str, int *ans, size_t *i, char c)
 {
-  while (str[*i] != '%')
+  while (str[*i] != c)
   {
-    *ans += write(1, &str[*i], 1);
-    *i++;
-  } 
+		write(1, &str[*i], 1);
+    *ans += 1;
+		*i += 1;
+  }
 }

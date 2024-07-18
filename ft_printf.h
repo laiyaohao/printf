@@ -6,7 +6,7 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 14:58:43 by ylai              #+#    #+#             */
-/*   Updated: 2024/07/04 22:12:44 by ylai             ###   ########.fr       */
+/*   Updated: 2024/07/18 22:30:41 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ int	ft_printf(const char *str, ...);
 char  *ft_itoa(int n);
 int ft_isnegative(int n);
 int ft_abs(int i);
-void  ft_normal(const char *str, int *ans, size_t *i);
+void  ft_normal(const char *str, int *ans, size_t *i, char c);
 void	ft_format(const char *str, int *ans, size_t *i, va_list args);
