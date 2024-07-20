@@ -1,19 +1,20 @@
 #include "ft_printf.h"
 
-// int main(int argc, char **argv)
-// {
-// 	if (argc == 3) {
-// 	int i = ft_printf(argv[1], argv[2]);
-// 	// write(1, "end of main\n", 12);
-// 	}
-// 	return 0;
-// }
-
-int main(void)
+int main(int argc, char **argv)
 {
-	int k = 10;
-	int i = ft_printf("%p", &k);
-	// write(1, "end of main\n", 12);
-	
+	char sample[20] = "haha%d,";
+	// if (argc == 2) {
+	int i = ft_printf(sample, 123);
+	write(1, "end of main\n", 12);
+	// }
 	return 0;
 }
+
+// int main(void)
+// {
+// 	// int k = 10;
+// 	int i = ft_printf("%d ff", 12);
+// 	write(1, "end of main\n", 12);
+	
+// 	return 0;
+// }

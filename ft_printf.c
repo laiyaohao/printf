@@ -24,9 +24,6 @@ int	ft_printf(const char *str, ...)
 	while (str[i])
 	{
 		ft_normal(str, &ans, &i, '%');
-		i++;
-		// write(1, "\n\n",2);
-		// write(1, &str[i],1);
 		ft_format(str, &ans, &i, args);
 	}
 	va_end(args);

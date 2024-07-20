@@ -17,6 +17,7 @@ static int	find_len(int n)
 		n /= 10;
 		len++;
 	}
+	printf("\nwhat is len in ft_itoa: %d\n", len);
 	return (len);
 }
 

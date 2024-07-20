@@ -7,13 +7,14 @@ void	ft_format(const char *str, int *ans, size_t *i, va_list args)
 	char	c;
 	void	*add;
 
-	if (str[*i] == '%')
+	printf("\nwhat is i in ft_format: %ld\n", *i);
+	if (str[*i + 1] == '%')
 	{
-		write(1, &str[*i], 1);
+		write(1, &str[*i + 1], 1);
 		*ans += 1;
-		*i += 1;
+		*i += 2;
 	}
-	else if (str[*i] == 'd' || str[*i] == 'i')
+	else if (str[*i + 1] == 'd' || str[*i + 1] == 'i')
 	{
 		to_print = ft_itoa(va_arg(args, int));
 		// read the number out
@@ -25,22 +26,23 @@ void	ft_format(const char *str, int *ans, size_t *i, va_list args)
 		// }
 		ft_normal(to_print, ans, &index, '\0');
 		free(to_print);
-		*i += 1;
+		to_print = NULL;
+		*i += 2;
 	}
-	else if (str[*i] == 'c')
+	else if (str[*i + 1] == 'c')
 	{
 		c = va_arg(args, int);
 		*ans += write(1, &c, 1);
-		*i += 1;
+		*i += 2;
 	}
-	else if (str[*i] == 's')
+	else if (str[*i + 1] == 's')
 	{
 		to_print = va_arg(args, char *);
 		index = 0;
 		ft_normal(to_print, ans, &index, '\0');
-		*i += 1;
+		*i += 2;
 	}
-	else if (str[*i] == 'p')
+	else if (str[*i + 1] == 'p')
 	{
 		add = va_arg(args, void *);
 		printf("add: %p\n", add);
@@ -48,6 +50,6 @@ void	ft_format(const char *str, int *ans, size_t *i, va_list args)
 		write(1, add, 2);
 		// index = 0;
 		// ft_normal(add, ans, &index, '\0');
-		*i += 1;
+		*i += 2;
 	}
 }
