@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_find_len.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/08 13:42:24 by ylai              #+#    #+#             */
-/*   Updated: 2024/07/21 13:49:24 by ylai             ###   ########.fr       */
+/*   Created: 2024/07/21 13:37:26 by ylai              #+#    #+#             */
+/*   Updated: 2024/07/21 13:37:48 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
-int	ft_printf(const char *str, ...)
+int	ft_find_len(int n)
 {
-	size_t	i;
-	int	ans;
-	va_list	args;
-	
-	va_start(args, str);
-	i = 0;
-	ans = 0;
-	while (str[i])
-	{
-		ft_putstr(str, &ans, &i, '%');
-		ft_format(str, &ans, &i, args);
-	}
-	va_end(args);
-	return (ans);
-}
+	int	len;
 
-// int main(void)
-// {
-// 	ft_printf("%i\n", 90);
-// 	return 0;
-// }
+	len = 0;
+	while (n != 0)
+	{
+		n /= 10;
+		len++;
+	}
+	return (len);
+}

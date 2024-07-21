@@ -1,37 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_print_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/08 13:42:24 by ylai              #+#    #+#             */
-/*   Updated: 2024/07/21 13:49:24 by ylai             ###   ########.fr       */
+/*   Created: 2024/07/21 16:00:05 by ylai              #+#    #+#             */
+/*   Updated: 2024/07/21 17:24:06 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf(const char *str, ...)
+void	ft_print_char(va_list args, int *ans, size_t *i)
 {
-	size_t	i;
-	int	ans;
-	va_list	args;
+	unsigned char	c;
 	
-	va_start(args, str);
-	i = 0;
-	ans = 0;
-	while (str[i])
-	{
-		ft_putstr(str, &ans, &i, '%');
-		ft_format(str, &ans, &i, args);
-	}
-	va_end(args);
-	return (ans);
+	c = va_arg(args, int);
+	ft_putchar(c, ans);
+	*i += 2;
 }
-
-// int main(void)
-// {
-// 	ft_printf("%i\n", 90);
-// 	return 0;
-// }

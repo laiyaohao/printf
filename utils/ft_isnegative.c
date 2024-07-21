@@ -1,37 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_isnegative.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/08 13:42:24 by ylai              #+#    #+#             */
-/*   Updated: 2024/07/21 13:49:24 by ylai             ###   ########.fr       */
+/*   Created: 2024/07/21 13:44:43 by ylai              #+#    #+#             */
+/*   Updated: 2024/07/21 13:44:44 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
-int	ft_printf(const char *str, ...)
+int ft_isnegative(int n)
 {
-	size_t	i;
-	int	ans;
-	va_list	args;
-	
-	va_start(args, str);
-	i = 0;
-	ans = 0;
-	while (str[i])
-	{
-		ft_putstr(str, &ans, &i, '%');
-		ft_format(str, &ans, &i, args);
-	}
-	va_end(args);
-	return (ans);
+  if (n < 0)
+    return (1);
+  return (0);
 }
-
-// int main(void)
-// {
-// 	ft_printf("%i\n", 90);
-// 	return 0;
-// }

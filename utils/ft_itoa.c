@@ -1,37 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/08 13:42:24 by ylai              #+#    #+#             */
-/*   Updated: 2024/07/21 13:49:24 by ylai             ###   ########.fr       */
+/*   Created: 2024/07/21 13:40:27 by ylai              #+#    #+#             */
+/*   Updated: 2024/07/21 17:53:25 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
-int	ft_printf(const char *str, ...)
+char	*ft_itoa(int n)
 {
-	size_t	i;
-	int	ans;
-	va_list	args;
-	
-	va_start(args, str);
-	i = 0;
-	ans = 0;
-	while (str[i])
+	int		len;
+	int		neg;
+	long	modulo;
+	char	*ans;
+
+	len = ft_find_len(n);
+	if (n == 0)
+		len = 1;
+	modulo = 10;
+	neg = ft_isnegative(n);
+	ans = (char *) malloc(sizeof(char) * (len + neg + 1));
+	if (ans == NULL)
+		return (NULL);
+	ans[len + neg] = '\0';
+	while (len--)
 	{
-		ft_putstr(str, &ans, &i, '%');
-		ft_format(str, &ans, &i, args);
+		ans[len + neg] = ((ft_abs(n % modulo)) / (modulo / 10)) + 48;
+		modulo *= 10;
 	}
-	va_end(args);
+	if (neg)
+		ans[0] = '-';
 	return (ans);
 }
-
-// int main(void)
-// {
-// 	ft_printf("%i\n", 90);
-// 	return 0;
-// }

@@ -1,8 +1,0 @@
-#include "ft_printf.h"
-
-int ft_abs(int i)
-{
-  if (i < 0)
-    return (-i);
-  return (i);
-}
