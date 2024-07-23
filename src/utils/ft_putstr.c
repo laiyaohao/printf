@@ -6,11 +6,11 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/21 13:46:25 by ylai              #+#    #+#             */
-/*   Updated: 2024/07/21 16:25:13 by ylai             ###   ########.fr       */
+/*   Updated: 2024/07/23 23:57:43 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../../ft_printf.h"
 
 // Function that prints characters from str until it reaches character c
 // or the end of the string. 

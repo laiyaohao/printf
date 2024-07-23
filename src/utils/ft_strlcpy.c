@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_str.c                                     :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/21 16:36:49 by ylai              #+#    #+#             */
-/*   Updated: 2024/07/21 16:49:29 by ylai             ###   ########.fr       */
+/*   Created: 2024/07/23 22:37:16 by ylai              #+#    #+#             */
+/*   Updated: 2024/07/23 23:01:04 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../../ft_printf.h"
 
-void	ft_print_str(va_list args, int *ans, size_t *i)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	char	*str;
-	size_t	index;
-	
-	str = va_arg(args, char *);
-	index = 0;
-	ft_putstr(str, ans, &index, '\0');
-	*i += 2;
+	size_t	i;
+	size_t	src_l;
+
+	i = 0;
+	src_l = ft_strlen(src);
+	if (size > 0)
+	{
+		while (i < (size - 1) && src[i])
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
+	}
+	return (src_l);
 }

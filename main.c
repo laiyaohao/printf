@@ -2,15 +2,16 @@
 
 int main(int argc, char **argv)
 {
-	char prompt[20] = "fake printf: %p, %d\n";
+	char prompt[21] = " NULL %s NULL ";
 	char sample[10] = "sample";
 	int k = 10;
 	// if (argc == 2) {
-	int i = ft_printf(prompt, &k, 10);
+	int i = ft_printf(prompt, NULL);
+	printf("\n\n");
 	printf("apa long max int: %u\n", UINT_MAX);
 	// write(1, "end of main\n", 12);
 	// }
-	int j = printf("true printf: %p, %d\n", &k, 10);
+	int j = printf(prompt, NULL);
 	printf("\nans from fake printf: %i\n", i);
 	printf("ans from true printf: %i\n", j);
 	return 0;

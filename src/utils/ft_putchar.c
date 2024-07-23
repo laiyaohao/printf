@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/08 13:42:24 by ylai              #+#    #+#             */
-/*   Updated: 2024/07/23 23:31:45 by ylai             ###   ########.fr       */
+/*   Created: 2024/07/21 15:46:50 by ylai              #+#    #+#             */
+/*   Updated: 2024/07/23 23:54:21 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../../ft_printf.h"
 
-int	ft_printf(const char *str, ...)
+void	ft_putchar(char c, int *ans)
 {
-	size_t	i;
-	int	ans;
-	va_list	args;
-	
-	va_start(args, str);
-	i = 0;
-	ans = 0;
-	while (str[i])
-	{
-		ft_putstr(str, &ans, &i, '%');
-		ft_format(str, &ans, &i, args);
-	}
-	// printf("\nend of fake printf\n");
-	va_end(args);
-	return (ans);
-}
+	write(1, &c, 1);
+	*ans += 1;
+	/*
+	va_list	ans_pter;
+	int	*tmp;
+	int		*ans;
 
-// int main(void)
-// {
-// 	ft_printf("%i\n", 90);
-// 	return 0;
-// }
+	va_start(ans_pter, c);
+	tmp = va_arg(ans_pter, void *);
+	write(1, &c, 1);
+	if (tmp != NULL)
+		*tmp += 1;
+	va_end(ans_pter);
+	*/
+}

@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_find_len.c                                      :+:      :+:    :+:   */
+/*   ft_print_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/21 13:37:26 by ylai              #+#    #+#             */
-/*   Updated: 2024/07/21 13:37:48 by ylai             ###   ########.fr       */
+/*   Created: 2024/07/21 16:00:05 by ylai              #+#    #+#             */
+/*   Updated: 2024/07/23 23:02:56 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "../../ft_printf.h"
 
-int	ft_find_len(int n)
+void	ft_print_char(va_list args, int *ans, size_t *i)
 {
-	int	len;
-
-	len = 0;
-	while (n != 0)
-	{
-		n /= 10;
-		len++;
-	}
-	return (len);
+	unsigned char	c;
+	
+	c = va_arg(args, int);
+	ft_putchar(c, ans);
+	*i += 2;
 }

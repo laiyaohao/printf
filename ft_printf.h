@@ -6,13 +6,13 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 14:58:43 by ylai              #+#    #+#             */
-/*   Updated: 2024/07/21 18:42:17 by ylai             ###   ########.fr       */
+/*   Updated: 2024/07/23 23:34:48 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
-#endif
+
 #include <stdarg.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -37,3 +37,5 @@ void	ft_print_char(va_list args, int *ans, size_t *i);
 void	ft_print_str(va_list args, int *ans, size_t *i);
 void	ft_print_add(va_list args, int *ans, size_t *i);
 void	ft_print_hex(va_list args, int *ans, size_t *i, char c);
+
+#endif

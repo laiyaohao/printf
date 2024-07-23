@@ -1,38 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_print_uint.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/08 13:42:24 by ylai              #+#    #+#             */
-/*   Updated: 2024/07/23 23:31:45 by ylai             ###   ########.fr       */
+/*   Created: 2024/07/23 22:38:05 by ylai              #+#    #+#             */
+/*   Updated: 2024/07/23 23:23:54 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../../ft_printf.h"
 
-int	ft_printf(const char *str, ...)
+void	ft_print_uint(va_list args, int *ans, size_t *i)
 {
-	size_t	i;
-	int	ans;
-	va_list	args;
+	char	*to_print;
+	size_t	index;
+	long long	input;
 	
-	va_start(args, str);
-	i = 0;
-	ans = 0;
-	while (str[i])
+	index = 0;
+	input = va_arg(args, int);
+	if (input < 0)
 	{
-		ft_putstr(str, &ans, &i, '%');
-		ft_format(str, &ans, &i, args);
+		input =  (long long)(UINT_MAX) + 1L + input;
 	}
-	// printf("\nend of fake printf\n");
-	va_end(args);
-	return (ans);
+	to_print = ft_ltoa(input);
+	ft_putstr(to_print, ans, &index, '\0');
+	free(to_print);
+	to_print = NULL;
+	*i += 2;
 }
-
-// int main(void)
-// {
-// 	ft_printf("%i\n", 90);
-// 	return 0;
-// }

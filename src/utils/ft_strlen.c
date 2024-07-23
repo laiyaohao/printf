@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/21 15:46:50 by ylai              #+#    #+#             */
-/*   Updated: 2024/07/21 16:24:57 by ylai             ###   ########.fr       */
+/*   Created: 2024/07/23 22:37:20 by ylai              #+#    #+#             */
+/*   Updated: 2024/07/23 23:01:08 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../../ft_printf.h"
 
-void	ft_putchar(char c, int *ans)
+size_t	ft_strlen(const char *str)
 {
-	write(1, &c, 1);
-	*ans += 1;
+	size_t	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }
