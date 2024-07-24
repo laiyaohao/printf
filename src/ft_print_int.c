@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_hex.c                                     :+:      :+:    :+:   */
+/*   ft_print_int.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/23 22:37:48 by ylai              #+#    #+#             */
-/*   Updated: 2024/07/23 23:02:58 by ylai             ###   ########.fr       */
+/*   Created: 2024/07/21 13:50:56 by ylai              #+#    #+#             */
+/*   Updated: 2024/07/24 18:35:06 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../ft_printf.h"
+#include "ft_printf.h"
 
-void	ft_print_hex(va_list args, int *ans, size_t *i, char c)
+// Function that prints an integer from the va_list args to the standard
+// output. 
+// It takes a va_list args, an int pointer ans to keep track of the total
+// characters printed, 
+// and a size_t pointer i to track the current index in the format string.
+void	ft_print_int(va_list args, int *ans, size_t *i)
 {
-  char  hex[17];
-  long long input;
-  char	*to_print;
+	char	*to_print;
 	size_t	index;
 
-  input = va_arg(args, int);
-  if (c == 'X')
-    ft_strlcpy(hex, "0123456789ABCDEF", 17);
-  else
-    ft_strlcpy(hex, "0123456789abcdef", 17);
-  if (input < 0)
-  {
-    input =  (long long)(UINT_MAX) + 1L + input;
-  }
 	index = 0;
-	to_print = ft_itohex(input, hex);
+	to_print = ft_itoa(va_arg(args, int));
 	ft_putstr(to_print, ans, &index, '\0');
 	free(to_print);
 	to_print = NULL;

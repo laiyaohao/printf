@@ -6,11 +6,11 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/21 13:40:27 by ylai              #+#    #+#             */
-/*   Updated: 2024/07/23 23:00:55 by ylai             ###   ########.fr       */
+/*   Updated: 2024/07/24 15:10:43 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../ft_printf.h"
+#include "../ft_printf.h"
 
 static int	find_len(long long n)
 {

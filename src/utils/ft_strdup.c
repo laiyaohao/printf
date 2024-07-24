@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_str.c                                     :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/21 16:36:49 by ylai              #+#    #+#             */
-/*   Updated: 2024/07/23 23:03:03 by ylai             ###   ########.fr       */
+/*   Created: 2024/07/24 16:13:05 by ylai              #+#    #+#             */
+/*   Updated: 2024/07/24 16:13:46 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../ft_printf.h"
+#include "../ft_printf.h"
 
-void	ft_print_str(va_list args, int *ans, size_t *i)
+char	*ft_strdup(const char *s1)
 {
+	size_t	i;
 	char	*str;
-	size_t	index;
-	
-	str = va_arg(args, char *);
-	index = 0;
-	ft_putstr(str, ans, &index, '\0');
-	*i += 2;
+	size_t	len;
+
+	i = 0;
+	len = ft_strlen(s1);
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (str == NULL)
+		return (NULL);
+	while (i < len)
+	{
+		str[i] = s1[i];
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
 }

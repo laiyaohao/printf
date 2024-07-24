@@ -1,29 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_int.c                                     :+:      :+:    :+:   */
+/*   ft_print_add.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/21 13:50:56 by ylai              #+#    #+#             */
-/*   Updated: 2024/07/23 23:03:01 by ylai             ###   ########.fr       */
+/*   Created: 2024/07/21 17:09:06 by ylai              #+#    #+#             */
+/*   Updated: 2024/07/24 18:30:00 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../ft_printf.h"
+#include "ft_printf.h"
 
-// Function that prints an integer from the va_list args to the standard output. 
-// It takes a va_list args, an int pointer ans to keep track of the total characters printed, 
-// and a size_t pointer i to track the current index in the format string.
-void	ft_print_int(va_list args, int *ans, size_t *i)
+void	ft_print_add(va_list args, int *ans, size_t *i)
 {
-	char	*to_print;
-	size_t	index;
-	
+	void			*add;
+	long long		input;
+	char			*to_print;
+	char			hex[17];
+	size_t			index;
+
 	index = 0;
-	to_print = ft_itoa(va_arg(args, int));
+	add = va_arg(args, void *);
+	input = (unsigned long)add;
+	ft_strlcpy(hex, "0123456789abcdef", 17);
+	if (input != 0)
+	{
+		ft_putchar('0', ans);
+		ft_putchar('x', ans);
+		to_print = ft_itohex(input, hex);
+	}
+	else
+		to_print = ft_strdup("(nil)");
 	ft_putstr(to_print, ans, &index, '\0');
 	free(to_print);
-	to_print = NULL;
 	*i += 2;
 }

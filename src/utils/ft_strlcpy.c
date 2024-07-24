@@ -6,11 +6,11 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 22:37:16 by ylai              #+#    #+#             */
-/*   Updated: 2024/07/23 23:01:04 by ylai             ###   ########.fr       */
+/*   Updated: 2024/07/24 15:10:51 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../ft_printf.h"
+#include "../ft_printf.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {

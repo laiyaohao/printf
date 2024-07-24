@@ -6,15 +6,15 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/21 13:44:43 by ylai              #+#    #+#             */
-/*   Updated: 2024/07/23 23:00:44 by ylai             ###   ########.fr       */
+/*   Updated: 2024/07/24 18:38:19 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../ft_printf.h"
+#include "../ft_printf.h"
 
-int ft_isnegative(int n)
+int	ft_isnegative(int n)
 {
-  if (n < 0)
-    return (1);
-  return (0);
+	if (n < 0)
+		return (1);
+	return (0);
 }

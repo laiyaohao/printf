@@ -6,11 +6,11 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/21 15:46:50 by ylai              #+#    #+#             */
-/*   Updated: 2024/07/23 23:54:21 by ylai             ###   ########.fr       */
+/*   Updated: 2024/07/24 15:10:46 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../ft_printf.h"
+#include "../ft_printf.h"
 
 void	ft_putchar(char c, int *ans)
 {
