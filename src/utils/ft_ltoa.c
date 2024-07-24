@@ -6,7 +6,7 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/21 13:40:27 by ylai              #+#    #+#             */
-/*   Updated: 2024/07/24 15:10:43 by ylai             ###   ########.fr       */
+/*   Updated: 2024/07/24 23:28:55 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ static int	find_len(long long n)
 	return (len);
 }
 
-static int is_negative(long long n)
+static int	is_negative(long long n)
 {
-  if (n < 0)
-    return (1);
-  return (0);
+	if (n < 0)
+		return (1);
+	return (0);
 }
 
 char	*ft_ltoa(long long n)

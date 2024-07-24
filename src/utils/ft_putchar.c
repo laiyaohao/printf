@@ -6,7 +6,7 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/21 15:46:50 by ylai              #+#    #+#             */
-/*   Updated: 2024/07/24 15:10:46 by ylai             ###   ########.fr       */
+/*   Updated: 2024/07/24 23:19:00 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,4 @@ void	ft_putchar(char c, int *ans)
 {
 	write(1, &c, 1);
 	*ans += 1;
-	/*
-	va_list	ans_pter;
-	int	*tmp;
-	int		*ans;
-
-	va_start(ans_pter, c);
-	tmp = va_arg(ans_pter, void *);
-	write(1, &c, 1);
-	if (tmp != NULL)
-		*tmp += 1;
-	va_end(ans_pter);
-	*/
 }
