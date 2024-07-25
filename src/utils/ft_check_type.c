@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_uint.c                                    :+:      :+:    :+:   */
+/*   ft_check_type.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/23 22:38:05 by ylai              #+#    #+#             */
-/*   Updated: 2024/07/25 19:34:51 by ylai             ###   ########.fr       */
+/*   Created: 2024/07/25 13:49:24 by ylai              #+#    #+#             */
+/*   Updated: 2024/07/25 13:54:53 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
-void	ft_print_uint(va_list args, int *ans)
+int	ft_check_type(char c)
 {
-	long long	input;
-	char		*to_print;
-	size_t		index;
-
-	index = 0;
-	input = va_arg(args, int);
-	if (input < 0)
+	if (c == 'c' || c == 's' || c == 'x' || c == 'X' || c == 'p' || c == 'u' ||
+	c == '%' || c == 'd' || c == 'i')
 	{
-		input = (long long)(UINT_MAX) + 1L + input;
+		return (1);
 	}
-	to_print = ft_ltoa(input);
-	ft_putstr(to_print, ans, &index, '\0');
-	free(to_print);
-	to_print = NULL;
+	return (0);
 }

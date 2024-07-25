@@ -6,7 +6,7 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/21 13:50:56 by ylai              #+#    #+#             */
-/*   Updated: 2024/07/24 18:35:06 by ylai             ###   ########.fr       */
+/*   Updated: 2024/07/25 19:34:44 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 // It takes a va_list args, an int pointer ans to keep track of the total
 // characters printed, 
 // and a size_t pointer i to track the current index in the format string.
-void	ft_print_int(va_list args, int *ans, size_t *i)
+void	ft_print_int(va_list args, int *ans)
 {
 	char	*to_print;
 	size_t	index;
@@ -27,5 +27,4 @@ void	ft_print_int(va_list args, int *ans, size_t *i)
 	ft_putstr(to_print, ans, &index, '\0');
 	free(to_print);
 	to_print = NULL;
-	*i += 2;
 }

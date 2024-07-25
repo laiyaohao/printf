@@ -6,7 +6,7 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 22:37:34 by ylai              #+#    #+#             */
-/*   Updated: 2024/07/24 18:27:35 by ylai             ###   ########.fr       */
+/*   Updated: 2024/07/25 19:59:03 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,19 @@
 
 void	ft_format(const char *str, int *ans, size_t *i, va_list args)
 {
-	if (str[*i + 1] == '%')
-	{
-		ft_putchar('%', ans);
-		*i += 2;
-	}
-	else if (str[*i + 1] == 'i' || str[*i + 1] == 'd')
-		ft_print_int(args, ans, i);
-	else if (str[*i + 1] == 'c')
-		ft_print_char(args, ans, i);
-	else if (str[*i + 1] == 's')
-		ft_print_str(args, ans, i);
-	else if (str[*i + 1] == 'u')
-		ft_print_uint(args, ans, i);
-	else if (str[*i + 1] == 'x' || str[*i + 1] == 'X')
-		ft_print_hex(args, ans, i, str[*i + 1]);
-	else if (str[*i + 1] == 'p')
-		ft_print_add(args, ans, i);
+	if (str[*i] == '%')
+		ft_putchar(str[*i], ans);
+	else if (str[*i] == 'i' || str[*i] == 'd')
+		ft_print_int(args, ans);
+	else if (str[*i] == 'c')
+		ft_print_char(args, ans);
+	else if (str[*i] == 's')
+		ft_print_str(args, ans);
+	else if (str[*i] == 'u')
+		ft_print_uint(args, ans);
+	else if (str[*i] == 'x' || str[*i] == 'X')
+		ft_print_hex(args, ans, str[*i]);
+	else if (str[*i] == 'p')
+		ft_print_add(args, ans);
+	
 }

@@ -6,13 +6,13 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 22:37:48 by ylai              #+#    #+#             */
-/*   Updated: 2024/07/24 18:34:20 by ylai             ###   ########.fr       */
+/*   Updated: 2024/07/25 19:34:39 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_print_hex(va_list args, int *ans, size_t *i, char c)
+void	ft_print_hex(va_list args, int *ans, char c)
 {
 	char				hex[17];
 	long long			input;
@@ -33,5 +33,4 @@ void	ft_print_hex(va_list args, int *ans, size_t *i, char c)
 	ft_putstr(to_print, ans, &index, '\0');
 	free(to_print);
 	to_print = NULL;
-	*i += 2;
 }

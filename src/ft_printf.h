@@ -6,7 +6,7 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 14:58:43 by ylai              #+#    #+#             */
-/*   Updated: 2024/07/25 00:25:32 by ylai             ###   ########.fr       */
+/*   Updated: 2024/07/25 19:34:22 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,14 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 void	ft_putchar(char c, int *ans);
 void	ft_putstr(const char *str, int *ans, size_t *i, char c);
 char	*ft_strdup(const char *s1);
+int		ft_check_type(char c);
 void	ft_format(const char *str, int *ans, size_t *i, va_list args);
 int		ft_find_len(int n);
-void	ft_print_int(va_list args, int *ans, size_t *i);
-void	ft_print_uint(va_list args, int *ans, size_t *i);
-void	ft_print_char(va_list args, int *ans, size_t *i);
-void	ft_print_str(va_list args, int *ans, size_t *i);
-void	ft_print_add(va_list args, int *ans, size_t *i);
-void	ft_print_hex(va_list args, int *ans, size_t *i, char c);
+void	ft_print_int(va_list args, int *ans);
+void	ft_print_uint(va_list args, int *ans);
+void	ft_print_char(va_list args, int *ans);
+void	ft_print_str(va_list args, int *ans);
+void	ft_print_add(va_list args, int *ans);
+void	ft_print_hex(va_list args, int *ans, char c);
 
 #endif
