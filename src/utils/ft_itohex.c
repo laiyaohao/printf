@@ -19,8 +19,6 @@ char	*ft_itohex(unsigned long n, char *base)
 	long long			len;
 
 	len = 0;
-	if (n < 0)
-		n = -n;
 	tmp = n;
 	if (n == 0)
 		len = 1;
